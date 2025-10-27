@@ -90,9 +90,10 @@ nest-asyncio==1.6.0
 networkx==3.5
 notebook==7.4.7
 notebook_shim==0.2.4
-numpy==1.26.4
-opencv-python==4.12.0.88
-opencv-python-headless==4.11.0.86
+# Use numpy 2.x to satisfy opencv 4.12 and avoid incompatible numpy 1.26
+numpy==2.2.6
+# Prefer headless opencv build for server environments; align version with opencv-python expectations
+opencv-python-headless==4.12.0.88
 optuna==3.6.2
 packaging==25.0
 pandas==2.3.3
@@ -132,7 +133,8 @@ rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 rfc3987-syntax==1.1.0
 rpds-py==0.27.1
-scikit-learn==1.3.2
+## scikit-learn: bump to 1.4.x so a prebuilt wheel for Python 3.13 is more likely to be used
+scikit-learn==1.4.2
 scikit-plot==0.3.7
 scipy==1.16.2
 seaborn==0.13.2
